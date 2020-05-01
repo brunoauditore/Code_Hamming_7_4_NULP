@@ -42,16 +42,13 @@ def rozbivka(arr):
 file = open('input.txt', 'r')
 file_bits = open('bits.txt', 'w')
 k = (to_code(file.read()))
-print(k)
 f = []
 f_roz = []
 for i in range(len(k)):
     f.append(translate.to_bin_arr(k[i]))
     f_roz.append(rozbivka(f[i]))
 
-print(f'translate {f}')
-print(bin(k[0]),bin(k[1]),bin(k[2]),bin(k[3]))
-print(f_roz)
+
 
 z = []
 for i in range(len(f_roz)):
@@ -60,23 +57,3 @@ for i in range(len(f_roz)):
 
 to_json = {'array': z}
 file_bits.write(json.dumps(to_json))
-print(z)
-
-print('_______________--')
-
-print(go([0,0,0,0]))
-print(go([0,0,0,1]))
-print(go([0,0,1,0]))
-print(go([0,0,1,1]))
-print(go([0,1,0,0]))
-print(go([0,1,0,1]))
-print(go([0,1,1,0]))
-print(go([0,1,1,1]))
-print(go([1,0,0,0]))
-print(go([1,0,0,1]))
-print(go([1,0,1,0]))
-print(go([1,0,1,1]))
-print(go([1,1,0,0]))
-print(go([1,1,0,1]))
-print(go([1,1,1,0]))
-print(go([1,1,1,1]))
